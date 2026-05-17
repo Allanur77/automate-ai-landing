@@ -1,0 +1,25 @@
+.header {
+	margin-top: 50px;
+
+	// .header__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		align-items: center;
+	}
+	&__logo {
+	}
+
+	&__logo-svg {
+		fill: #ffffff;
+		transition: fill 0.3s ease;
+
+		&:hover {
+			fill: #ff541f;
+		}
+	}
+	&__login {
+	}
+}

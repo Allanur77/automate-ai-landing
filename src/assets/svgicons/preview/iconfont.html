@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Иконочный шрифт</title>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		body{
+			padding: 1.875rem;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 1em;
+			background-color:#333;
+			color:#fff;
+		}
+		.iconfont-page h1{
+			font-size: 1.875rem;
+			margin-bottom: 2rem;
+		}
+		.iconfont-page ul{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2.5rem;
+			margin: 0;
+			padding: 0;
+		}
+		.iconfont-page ul li{
+			margin-bottom: 0.625rem;
+			display: inline-flex;
+			gap: 0.625rem;
+			list-style: none;
+			align-items: center;
+		}
+		.iconfont-page ul li::before{
+			font-size: 2rem;
+		}
+		@font-face { 
+	font-family: "iconfont"; 
+	font-display: swap;
+	src: url("iconfont.woff2?d35b2a5206ec5b6a90af5f0076ce066a") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
+}
+	[class*="--icon-twitter"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-tick"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-star"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-romb"]::before { 
+		content: "\f104"; 
+	} 
+	[class*="--icon-google"]::before { 
+		content: "\f105"; 
+	} 
+	[class*="--icon-github"]::before { 
+		content: "\f106"; 
+	} 
+	[class*="--icon-facebook"]::before { 
+		content: "\f107"; 
+	} 
+	[class*="--icon-arrow"]::before { 
+		content: "\f108"; 
+	} 
+	[class*="--icon-arrow-small"]::before { 
+		content: "\f109"; 
+	} 
+	[class*="--icon-arrow-big"]::before { 
+		content: "\f10a"; 
+	} 
+
+	</style>
+</head>
+<body>
+	<div class="iconfont-page">
+<h1>Список иконок и их классов:</h1>
+		<ul>
+				<li class="--icon-twitter">--icon-twitter</li>
+				<li class="--icon-tick">--icon-tick</li>
+				<li class="--icon-star">--icon-star</li>
+				<li class="--icon-romb">--icon-romb</li>
+				<li class="--icon-google">--icon-google</li>
+				<li class="--icon-github">--icon-github</li>
+				<li class="--icon-facebook">--icon-facebook</li>
+				<li class="--icon-arrow">--icon-arrow</li>
+				<li class="--icon-arrow-small">--icon-arrow-small</li>
+				<li class="--icon-arrow-big">--icon-arrow-big</li>
+		</ul>
+	</div>
+</body>
+</html>

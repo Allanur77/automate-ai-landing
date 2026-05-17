@@ -1,0 +1,8 @@
+node_modules
+dist
+zip
+.vscode
+backend
+reload.txt
+build
+package-lock.json

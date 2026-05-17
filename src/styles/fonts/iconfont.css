@@ -1,0 +1,38 @@
+@font-face { 
+	font-family: "iconfont"; 
+	font-display: swap;
+	src: url("C:/Users/Windows 10 PRO/Desktop/programming/Practice/2026/automate-ai-landing/src/assets/svgicons/preview/iconfont.woff2?d35b2a5206ec5b6a90af5f0076ce066a") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
+}
+	[class*="--icon-twitter"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-tick"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-star"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-romb"]::before { 
+		content: "\f104"; 
+	} 
+	[class*="--icon-google"]::before { 
+		content: "\f105"; 
+	} 
+	[class*="--icon-github"]::before { 
+		content: "\f106"; 
+	} 
+	[class*="--icon-facebook"]::before { 
+		content: "\f107"; 
+	} 
+	[class*="--icon-arrow"]::before { 
+		content: "\f108"; 
+	} 
+	[class*="--icon-arrow-small"]::before { 
+		content: "\f109"; 
+	} 
+	[class*="--icon-arrow-big"]::before { 
+		content: "\f10a"; 
+	} 
