@@ -1,4 +1,4 @@
-<header data-fls-header class="header">
+<header data-fls-header data-fls-header-scroll data-fls-header-scroll-show class="header header_margin-top">
 	<div class="header__container">
 		<a href="#" class="header__logo">
 			<svg class="header__logo-svg" width="54" height="41" viewBox="0 0 54 41" xmlns="http://www.w3.org/2000/svg">
@@ -7,6 +7,8 @@
 			</svg>
 		</a>
 		<include src="@components/layout/menu/menu.html" locals='{"active":"[[active]]"}'></include>
-
-		<a href="#" class="header__login">Login</a>
+		<div class="header__actions">
+			<a href="#" class="header__login btn">Login</a>
+		</div>
+	</div>
 </header>

@@ -11,8 +11,11 @@
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: 50px 15px 30px 15px;
+			background-color: rgba(0, 20, 63, 0.9);
+			backdrop-filter: blur(20px);
+			padding: toRem(120) toRem(15) toRem(30) toRem(15);
 			transition: left 0.3s;
+			z-index: 4;
 			&::before {
 				content: "";
 				position: fixed;
@@ -34,8 +37,11 @@
 	// .menu__list
 	&__list {
 		display: flex;
-		column-gap: 10px;
+		gap: toRem(60);
+		align-items: center;
 		@media (max-width: toEm($mobile)) {
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 	// .menu__item
@@ -43,6 +49,37 @@
 	}
 	// .menu__link
 	&__link {
+		position: relative;
+		padding-bottom: toRem(6);
+		color: var(--main-color);
+		font-size: toRem(20);
+		font-weight: 400;
+		white-space: nowrap;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--accent-color);
+		}
+
+		&--active {
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%; // Линия на всю ширину текста
+				height: 2px;
+				background-color: var(--accent-color);
+				border-radius: 2px;
+			}
+		}
+
+		@media (max-width: toEm($mobile)) {
+			font-size: toRem(28);
+		}
+
+		&:active {
+		}
 		@media (max-width: toEm($mobile)) {
 		}
 	}
@@ -55,7 +92,7 @@
 		display: block;
 		position: relative;
 		width: toRem(30);
-		height: toRem(18);
+		height: toRem(25);
 		z-index: 5;
 		@media (any-hover: none) {
 			cursor: default;

@@ -48,7 +48,14 @@
 	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 // Адаптивное свойство (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize: settings.$minSize, $keepSize: 0, $widthFrom: settings.$containerWidth, $widthTo: settings.$minWidth) {
+@mixin adaptiveValue(
+	$property,
+	$startSize,
+	$minSize: settings.$minSize,
+	$keepSize: 0,
+	$widthFrom: settings.$containerWidth,
+	$widthTo: settings.$minWidth
+) {
 	@if ($startSize==0) {
 		$startSize: 0.000001;
 	}
@@ -95,7 +102,12 @@
 	}
 }
 // Grid-контейнер
-@mixin gridContainer($type: 0, $container: settings.$maxWidthContainer, $paddingStart: math.div(settings.$containerPadding, 2), $paddingEnd: math.div(settings.$containerPadding, 2)) {
+@mixin gridContainer(
+	$type: 0,
+	$container: settings.$maxWidthContainer,
+	$paddingStart: math.div(settings.$containerPadding, 2),
+	$paddingEnd: math.div(settings.$containerPadding, 2)
+) {
 	display: grid;
 	min-width: 0;
 	grid-template-columns: #{$paddingStart}px 1fr minmax(auto, #{$container}px) 1fr #{$paddingEnd}px;
@@ -117,4 +129,28 @@
 			grid-column: 3 / 4;
 		}
 	}
+}
+
+@mixin btn-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: toRem(12) toRem(28);
+	background-color: var(--accent-color);
+	border-radius: toRem(10);
+	transition: all 0.3s ease;
+	font-weight: 700;
+	color: var(--main-color);
+	font-size: toRem(20);
+	white-space: nowrap;
+
+	&:hover {
+		background-color: #e04413;
+		transform: translateY(-1px);
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+	
 }

@@ -1,25 +1,69 @@
 .header {
-	margin-top: 50px;
-
+	&_margin-top {
+		margin-top: toRem(30);
+		@media (max-width: toEm($mobile)) {
+			margin-top: toRem(0); // или 0, если хочешь прижать шапку вплотную
+		}
+	}
 	// .header__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
-		padding-top: 10px;
-		padding-bottom: 10px;
 		align-items: center;
+		padding-top: toRem(20);
+		padding-bottom: toRem(20);
 	}
 	&__logo {
+		&:hover {
+			.header__logo-svg {
+				fill: #ff541f;
+			}
+		}
 	}
 
 	&__logo-svg {
 		fill: #ffffff;
 		transition: fill 0.3s ease;
+	}
 
-		&:hover {
-			fill: #ff541f;
-		}
+	&__menu {
+	}
+
+	&__actions {
 	}
 	&__login {
+		@include btn-primary;
+
+		@media (max-width: toEm($mobile)) {
+			padding: toRem(8) toRem(20);
+			font-size: toRem(18);
+			border-radius: toRem(6);
+		}
+	}
+
+	@media (max-width: toEm($mobile)) {
+		.header {
+			&__container {
+				padding-top: toRem(12);
+				padding-bottom: toRem(12);
+				align-items: center;
+			}
+
+			&__logo {
+				order: 1;
+			}
+			&__menu {
+				display: flex;
+				align-items: center;
+				order: 3;
+			}
+			&__actions {
+				display: flex;
+				align-items: center;
+				margin-right: toRem(25);
+				margin-left: auto;
+				order: 2;
+			}
+		}
 	}
 }
