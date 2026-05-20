@@ -1,4 +1,6 @@
 .header {
+	position: relative;
+	z-index: 5;
 	&_margin-top {
 		margin-top: toRem(30);
 		@media (max-width: toEm($mobile)) {
@@ -32,7 +34,13 @@
 	&__actions {
 	}
 	&__login {
-		@include btn-primary;
+		@include btn;
+		color: var(--main-color);
+		background-color: var(--accent-color);
+		&:hover {
+			background-color: #e04413;
+			box-shadow: 0 0 toRem(20) rgba(255, 84, 31, 0.4);
+		}
 
 		@media (max-width: toEm($mobile)) {
 			padding: toRem(8) toRem(20);

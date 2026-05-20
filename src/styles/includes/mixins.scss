@@ -131,26 +131,22 @@
 	}
 }
 
-@mixin btn-primary {
+@mixin btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: toRem(12) toRem(28);
-	background-color: var(--accent-color);
 	border-radius: toRem(10);
 	transition: all 0.3s ease;
 	font-weight: 700;
-	color: var(--main-color);
 	font-size: toRem(20);
 	white-space: nowrap;
 
 	&:hover {
-		background-color: #e04413;
 		transform: translateY(-1px);
 	}
 
 	&:active {
 		transform: translateY(1px);
 	}
-	
 }
