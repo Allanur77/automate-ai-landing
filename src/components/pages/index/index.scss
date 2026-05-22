@@ -278,7 +278,7 @@
 	// .features__container
 	&__container {
 		@include adaptiveValue("padding-top", 50, 20);
-		@include adaptiveValue("padding-bottom", 60, 30);
+		@include adaptiveValue("padding-bottom", 45, 20);
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 150%);
 	}
 
@@ -423,6 +423,12 @@
 				display: none;
 			}
 		}
+
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	// .card-feature__head
@@ -456,6 +462,10 @@
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		color: var(--accent-color);
 		transition: all 0.3s ease;
+
+		@media (max-width: toEm($mobile)) {
+			display: none;
+		}
 	}
 
 	// .card-feature__title
@@ -467,8 +477,261 @@
 
 .numbers {
 	&__container {
-		margin-top: toRem(80);
-		margin-bottom: toRem(80);
-		height: 500px;
+		padding-top: toRem(45);
+		@include adaptiveValue("padding-bottom", 120, 50);
+	}
+
+	&__head {
+		display: flex;
+		gap: toRem(27);
+		max-width: toRem(880);
+		margin: 0 auto;
+		@include adaptiveValue("margin-bottom", 100, 40);
+	}
+
+	&__date {
+		font-size: toRem(16);
+		line-height: 2;
+		color: #ffffff;
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 28, 16);
+		color: #ffffff;
+		line-height: 1.4;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: toRem(25);
+		@include adaptiveValue("margin-bottom", 80, 40);
+
+		@media (max-width: toEm(1024)) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: toRem(80) toRem(32);
+			justify-items: center;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			grid-template-columns: 1fr;
+			gap: toRem(24);
+			justify-items: stretch;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: toRem(24);
+
+		@media (max-width: toEm($mobile)) {
+			flex-direction: column;
+			gap: toRem(16);
+			width: 100%;
+		}
+	}
+
+	&__btn {
+		@include btn;
+		background-color: var(--accent-color);
+		color: #ffffff;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: toRem(10);
+
+		&:hover {
+			background-color: #e04413;
+			box-shadow: 0 0 toRem(20) rgba(255, 84, 31, 0.4);
+		}
+
+		@media (max-width: toEm($mobile)) {
+			width: 100%;
+		}
+	}
+
+	&__status {
+		font-size: toRem(16);
+		color: rgba(255, 255, 255, 0.6);
+		display: inline-flex;
+		align-items: center;
+		gap: toRem(8);
+
+		&::after {
+			content: "";
+			width: toRem(8);
+			height: toRem(8);
+			border-radius: 50%;
+			background-color: #9e9e9e;
+		}
+
+		&--available::after {
+			background-color: #00cc66;
+			box-shadow: 0 0 toRem(8) rgba(0, 204, 102, 0.6);
+		}
+
+		&--busy::after {
+			background-color: #ff3333;
+			box-shadow: 0 0 toRem(8) rgba(255, 51, 51, 0.6);
+		}
 	}
 }
+
+.card-number {
+	display: flex;
+	flex-direction: column;
+
+	&--up {
+		@media (min-width: toEm(769)) {
+			transform: translateY(toRem(-45));
+		}
+	}
+
+	&--down {
+		@media (min-width: toEm(769)) {
+			@include adaptiveValue("margin-top", 90, 60);
+		}
+	}
+
+	&__body {
+		background: transparent;
+		border: none;
+		backdrop-filter: none;
+		padding: 0;
+
+		@media (max-width: toEm($mobile)) {
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 84, 31, 0.02) 100%);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			backdrop-filter: blur(10px);
+			border-radius: toRem(20);
+			padding: toRem(24);
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__date {
+		@include adaptiveValue("font-size", 67, 40);
+		color: #ffffff;
+		font-weight: 700;
+		line-height: 1.1;
+		display: block;
+		margin-bottom: toRem(10);
+	}
+
+	&__value {
+		@include adaptiveValue("font-size", 22, 18);
+		color: #ffffff;
+		margin-bottom: toRem(6);
+	}
+
+	&__desc {
+		color: #8f8e8e;
+		font-size: toRem(15);
+		line-height: 1.5;
+		margin-bottom: toRem(24);
+	}
+
+	&__images {
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		width: 100%;
+
+		@media (max-width: toEm($mobile)) {
+			justify-content: center;
+		}
+
+		.card-number__img {
+			width: toRem(40);
+			height: toRem(40);
+			outline: 2.8px #f2f2f2 solid;
+			overflow: hidden;
+			flex-shrink: 0;
+			position: relative;
+			z-index: 3;
+
+			&:not(:first-child) {
+				margin-left: toRem(-12);
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&--circle {
+			.card-number__img {
+				border-radius: 50%;
+			}
+		}
+
+		&--square {
+			.card-number__img {
+				border-radius: toRem(8);
+			}
+		}
+	}
+
+	&__divider {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		position: absolute;
+		left: toRem(72);
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+		width: 72%;
+
+		@media (max-width: toEm(1024)) {
+			width: 100%;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			display: none;
+		}
+	}
+
+	&__horiz-line {
+		flex-grow: 1;
+		height: 1px;
+		background-color: #ffffff;
+		transform: translateX(30px) translateY(1px) scale(1.07);
+	}
+
+	&__arrow {
+		color: #ffffff;
+		font-size: toRem(10);
+		display: inline-block;
+		flex-shrink: 0;
+		font-style: 25px;
+
+		&--mirror {
+			transform: scaleX(-1);
+			margin-left: toRem(-2);
+		}
+	}
+
+	&__vert-line {
+		width: 1px;
+		height: toRem(91);
+		background-color: #ffffff;
+		flex-shrink: 0;
+		margin: 0 toRem(1);
+		transform: translateY(-15px);
+
+		@media (max-width: toEm(1024)) {
+			height: toRem(120);
+			transform: translateY(-25px);
+		}
+	}
+}
+
+
