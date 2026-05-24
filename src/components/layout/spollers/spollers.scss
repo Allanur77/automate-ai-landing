@@ -1,9 +1,4 @@
-// Базовые стили спойлеров
-// Сниппет (HTML): spoller
-
 [data-fls-spollers] {
-	details {
-	}
 	summary {
 		list-style: none;
 		&::marker,
@@ -13,93 +8,115 @@
 	}
 }
 
-// Блок со спойлерами
 .spollers {
 	display: grid;
-	gap: 15px;
 }
-// Спойлер
+
+// Спойлер (Карточка целиком)
 .spollers__item {
-	font-size: toRem(20);
+	width: 100%;
+
+	// Эффект матового стекла для каждого отдельного вопроса
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.08); // Делаем полноценную рамку со всех сторон
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08); // Делаем полноценную рамку со всех сторон
+	backdrop-filter: blur(toRem(20)); // Размытие линий под каждым спойлером!
+
+	transition:
+		border-color 0.3s ease,
+		background-color 0.3s ease;
+
+	// Очищаем отступ у самого последнего спойлера, чтобы не ломать нижний паддинг секции
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	// Красивый ховер-эффект: плашка становится чуть ярче при наведении
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: rgba(255, 255, 255, 0.15);
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+		}
+	}
 }
-// Заголовок спойлера
+
+// Заголовок спойлера (Вопрос)
 .spollers__title {
 	width: 100%;
-	cursor: default;
+	padding: toRem(24);
+	font-size: toRem(20);
+	font-weight: 400;
+	line-height: 1.43;
+	color: #ffffff;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: 10px 15px;
-	border-radius: 5px;
 	position: relative;
 	list-style: none;
+
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
 	}
+
+	// Внедрение и кастомизация стрелочек из ЧФ4 под дизайн
 	.--spoller-init & {
 		cursor: pointer;
+
 		&::before,
 		&::after {
 			content: "";
 			position: absolute;
-			right: 10px;
+			right: toRem(24);
 			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
+			background-color: rgba(255, 255, 255, 0.4); // Базовый цвет стрелки
+			height: toRem(1.5);
+			width: toRem(9);
+			transition:
+				transform 0.3s ease 0s,
+				background-color 0.3s ease;
 		}
+
+		// Левая половинка стрелки (уголок вниз)
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
+			transform: translate(calc(-100% + toRem(2.5)), -50%) rotate(45deg);
 		}
+		// Правая половинка стрелки (уголок вниз)
 		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+			transform: translate(0, -50%) rotate(-45deg);
 		}
+
+		// Анимация при раскрытии (класс добавляется скриптом ЧФ4)
 		&.--spoller-active {
+			color: #ffffff;
+
+			&::before,
+			&::after {
+				background-color: #ff5722; // Перекрашиваем стрелочку в оранжевый
+			}
+			// Разворачиваем обе половинки вверх
 			&::before {
-				transform: translateX(-75%) rotate(-40deg);
+				transform: translate(calc(-100% + toRem(2.5)), -50%) rotate(-45deg);
 			}
 			&::after {
-				transform: rotate(40deg);
+				transform: translate(0, -50%) rotate(45deg);
 			}
 		}
 	}
-}
-// Контент спойлера
-.spollers__body {
-	padding: 20px;
-	border-radius: 5px;
-	border: 1px solid #eee;
+
+	@media (max-width: 767.98px) {
+		font-size: toRem(16);
+		padding: toRem(20) toRem(48) toRem(20) toRem(20);
+	}
 }
 
-// .--spoller-init & {
-// 	position: relative;
-// 	width: 100%;
-// 	text-align: left;
-// 	&::before,
-// 	&::after {
-// 		content: "";
-// 		position: absolute;
-// 		right: 0;
-// 		top: toRem(12);
-// 		height: toRem(1);
-// 		transition: all 0.3s ease 0s;
-// 		width: toRem(10);
-// 		background-color: #000;
-// 	}
-// 	&::before {
-// 		transform: rotate(40deg);
-// 		right: toRem(7);
-// 	}
-// 	&::after {
-// 		transform: rotate(-40deg);
-// 	}
-// }
-// &.--spoller-active {
-// 	&::before {
-// 		transform: rotate(-40deg);
-// 	}
-// 	&::after {
-// 		transform: rotate(40deg);
-// 	}
-// }
+// Контент спойлера (Ответ)
+.spollers__body {
+	padding: 0 toRem(24) toRem(24) toRem(24); // Верхний паддинг обязательно 0, чтобы анимация slideToggle не дергалась
+	font-size: toRem(18);
+	line-height: 1.325;
+	color: #919191;
+
+	@media (max-width: 767.98px) {
+		font-size: toRem(14);
+		padding: 0 toRem(20) toRem(20) toRem(20);
+	}
+}

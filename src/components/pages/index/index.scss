@@ -533,21 +533,44 @@
 	}
 
 	&__btn {
-		@include btn;
-		background-color: var(--accent-color);
-		color: #ffffff;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		padding: toRem(12) toRem(28);
+		border-radius: toRem(10);
+		transition: all 0.3s ease;
+		font-weight: 700;
+		font-size: toRem(20);
+		white-space: nowrap;
+		background-color: var(--accent-color);
 		gap: toRem(10);
+		transition:
+			background-color 0.3s ease,
+			transform 0.2s ease;
 
-		&:hover {
-			background-color: #e04413;
-			box-shadow: 0 0 toRem(20) rgba(255, 84, 31, 0.4);
+		span {
+			position: relative;
 		}
 
-		@media (max-width: toEm($mobile)) {
-			width: 100%;
+		.numbers__arrow {
+			line-height: 1;
+			display: block;
+			transition: transform 0.3s ease;
+			transform: translateY(0);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #e04310;
+
+				.numbers__arrow {
+					transform: translateX(toRem(4));
+				}
+			}
+		}
+
+		&:active {
+			transform: scale(0.98);
 		}
 	}
 
@@ -1153,5 +1176,301 @@
 		display: inline-flex;
 		font-size: toRem(20);
 		transform: rotate(180deg);
+	}
+}
+
+.faq-wrapper {
+	position: relative;
+	background-color: #010101;
+	overflow: hidden;
+	width: 100%;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		top: 35%;
+		right: -200px;
+		@include adaptiveValue("width", 940, 470, 0, 1200, 768);
+		@include adaptiveValue("height", 983, 491.5, 0, 1200, 768);
+		background: conic-gradient(
+			from 180deg at 50% 50%,
+			rgba(250, 84, 36, 0.3) 85deg,
+			rgba(193.93, 44.28, 0, 0.3) 184deg,
+			rgba(151.65, 35.36, 0, 0.3) 272deg,
+			rgba(251, 30, 30, 0.3) 360deg
+		);
+		border-radius: 9999px;
+		filter: blur(150px);
+		mix-blend-mode: screen;
+		pointer-events: none;
+	}
+
+	&__line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 1483px;
+			height: 46px;
+			background-color: white;
+			transform: rotate(42deg);
+			transform-origin: top left;
+			opacity: 0.1;
+
+			@media (max-width: 767.98px) {
+				width: 800px;
+				height: 20px;
+			}
+		}
+
+		&::before {
+			left: 45%;
+			top: 25%;
+		}
+
+		&::after {
+			left: 40%;
+			top: calc(25% + 120px);
+		}
+	}
+}
+
+.faq {
+	position: relative;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 150%);
+	color: #ffffff;
+	padding: toRem(40) 0;
+	@include adaptiveValue("margin-bottom", 90, 30);
+
+	&__container {
+		position: relative;
+	}
+
+	&__body {
+		position: relative;
+		z-index: 5;
+		max-width: toRem(830);
+		width: 100%;
+		margin: 0 auto;
+		padding: toRem(60) toRem(15) toRem(45) toRem(15);
+	}
+
+	// .faq__header
+
+	&__header {
+		text-align: center;
+		margin-bottom: toRem(76);
+	}
+
+	&__title {
+		font-size: toRem(64);
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: toRem(29);
+		letter-spacing: toRem(-1);
+
+		@media (max-width: 767.98px) {
+			font-size: toRem(45);
+		}
+	}
+
+	&__text {
+		font-size: toRem(20);
+		color: #d9d9d9;
+		line-height: 1.43;
+		margin: 0 auto;
+	}
+
+	&__decor {
+		position: absolute;
+		pointer-events: none;
+		z-index: 2;
+
+		&--1 {
+			top: 0;
+			left: -10%;
+			@include adaptiveValue("width", 150.84, 75.42, 0, 1200, 768);
+			@include adaptiveValue("height", 282.15, 141.1, 0, 1200, 768);
+			border-radius: toRem(78.16);
+			border: 23.45px #ff9777 solid;
+		}
+
+		&--2 {
+			bottom: 0;
+			left: -26%;
+			@include adaptiveValue("width", 424.39, 212.2, 0, 1200, 768);
+			@include adaptiveValue("height", 150.84, 75.4, 0, 1200, 768);
+			border-radius: toRem(78.16);
+			border: 23.45px #f6f6f6 solid;
+		}
+
+		&--3 {
+			top: 50%;
+			transform: translateY(-50%);
+			right: -25%;
+			@include adaptiveValue("width", 291, 148.5, 0, 1200, 768);
+			@include adaptiveValue("height", 291, 148.5, 0, 1200, 768);
+			border-radius: 50%;
+			border: 23.45px #ff541f solid;
+		}
+
+		@media (max-width: 767.98px) {
+			&--1,
+			&--2,
+			&--3 {
+				display: none;
+			}
+		}
+	}
+}
+
+.cta {
+	position: relative;
+	// Нам не нужны фоны, так как общая обёртка .faq-wrapper всё сделает за нас
+	background: transparent;
+	@include adaptiveValue("padding-bottom", 60, 30); // Отступ снизу секции
+
+	&__container {
+		margin-top: toRem(46);
+	}
+
+	&__body {
+		position: relative;
+		overflow: hidden; // Чтобы фоновая сетка не вылетала за скругления карточки
+		max-width: toRem(1120); // Ширина самой большой плашки по макету
+		margin: 0 auto;
+
+		// Эффект матового стекла (Glassmorphism)
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		@include adaptiveValue("border-radius", 32, 16);
+		backdrop-filter: blur(toRem(20));
+
+		// Паддинги внутри карточки
+		@include adaptiveValue("padding-top", 70, 40);
+		@include adaptiveValue("padding-bottom", 70, 40);
+		padding-left: toRem(24);
+		padding-right: toRem(24);
+
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 150%;
+			top: -50%;
+			left: 0; // Добавь для жесткой фиксации по левому краю
+
+			// КРИТИЧЕСКИ ВАЖНО: уводим под текст и отключаем клики
+			z-index: -1;
+			pointer-events: none;
+
+			background: radial-gradient(
+				ellipse 50% 60% at 50% 32.8%,
+				rgba(255, 255, 255, 0.4) 7%,
+				rgba(255, 84, 31, 0.32) 24%,
+				rgba(247.15, 175.13, 152.81, 0.4) 36%,
+				rgba(255, 84, 31, 0.4) 50%,
+				rgba(0, 0, 0, 0) 100%
+			);
+			opacity: 0.8;
+			transition: opacity 0.5s ease;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					opacity: 1; // Градиент становится чуть ярче, когда пользователь наводит мышку на карточку
+				}
+			}
+		}
+	}
+
+	// Полупрозрачная сетка на фоне внутри карточки
+	&__grid-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		pointer-events: none;
+		opacity: 0.05; // Делаем её едва заметной
+		// Сюда можно бахнуть мелкую SVG-сетку фоном, если она не экспортирована вместе с макетом
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+		background-size: 40px 40px; // Размер ячейки сетки
+	}
+
+	&__title {
+		color: #ffffff;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: toRem(-1);
+		@include adaptiveValue("font-size", 64, 28);
+		@include adaptiveValue("margin-bottom", 35, 16);
+		max-width: toRem(800);
+	}
+
+	&__text {
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.6;
+		@include adaptiveValue("font-size", 20, 14);
+		@include adaptiveValue("margin-bottom", 35, 24);
+		max-width: toRem(680);
+	}
+
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: toRem(12) toRem(28);
+		border-radius: toRem(10);
+		transition: all 0.3s ease;
+		font-weight: 700;
+		font-size: toRem(20);
+		white-space: nowrap;
+		background-color: var(--accent-color);
+		gap: toRem(10);
+		transition:
+			background-color 0.3s ease,
+			transform 0.2s ease;
+
+		span {
+			position: relative;
+		}
+
+		.cta__arrow {
+			line-height: 1;
+			display: block;
+			transition: transform 0.3s ease;
+			transform: translateY(0);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #e04310;
+
+				.cta__arrow {
+					transform: translateX(toRem(4));
+				}
+			}
+		}
+
+		&:active {
+			transform: scale(0.98);
+		}
 	}
 }
