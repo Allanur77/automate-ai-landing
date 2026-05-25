@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/Sk-Modernist-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Sk-Modernist-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="assets/img/favicon.ico">
+		<title>Home Page</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1779707749927"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1779707749927">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="50" data-fls-header-scroll-show="" class="header header_margin-top">
+				<div class="header__container">
+					<a href="#" class="header__logo">
+						<svg class="header__logo-svg" width="54" height="41" viewbox="0 0 54 41" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M27.0017 17.3507L21.4085 7.66994L23.2806 4.43091H30.7194L32.5915 7.66994L27.0017 17.3507ZM9.5387 0H4.4243L3.8147e-06 7.66002L18.8529 40.3175L27.0017 26.2026L35.1503 40.3175L54 7.66002L49.5756 0H44.4612L48.8856 7.66002L35.147 31.459L29.5539 21.7783L37.7026 7.66333L33.2783 0.00330497H20.7217L16.2974 7.66333L24.4461 21.7783L18.8529 31.459L5.1144 7.66002L9.5387 0Z"></path>
+						</svg>
+					</a>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+							<span></span>
+						</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="https://google.com" class="menu__link menu__link--active">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Services</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Contact us</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">About us</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__actions">
+						<a href="#" class="header__login btn">Login</a>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div data-fls-index="" class="index index_margin-top">
+					<div class="index__promo-mirror">
+						<section class="hero">
+							<div class="hero__container">
+								<div class="hero__content">
+									<div class="hero__rating rating-hero">
+										<div class="rating-hero__avatars">
+											<div class="rating-hero__avatar">
+												<picture>
+													<img alt="User 1" src="./assets/img/hero/our-clients-1.webp">
+												</picture>
+											</div>
+											<div class="rating-hero__avatar">
+												<picture>
+													<img alt="User 2" src="./assets/img/hero/our-clients-2.webp">
+												</picture>
+											</div>
+											<div class="rating-hero__avatar">
+												<picture>
+													<img alt="User 3" src="./assets/img/hero/our-clients-3.webp">
+												</picture>
+											</div>
+											<div class="rating-hero__avatar">
+												<picture>
+													<img alt="User 4" src="./assets/img/hero/our-clients-4.webp">
+												</picture>
+											</div>
+										</div>
+										<div class="rating-hero__info">
+											<div class="rating-hero__stars">
+												<span class="--icon-star"></span>
+												<span class="--icon-star"></span>
+												<span class="--icon-star"></span>
+												<span class="--icon-star"></span>
+												<span class="--icon-star"></span>
+											</div>
+											<p class="rating-hero__text">115+ happy clients</p>
+										</div>
+									</div>
+									<h1 class="hero__title">
+										Automate
+										<span>Intelligence</span>
+										.
+										<br>
+										Accelerate Growth.
+									</h1>
+									<p class="hero__text">
+										Our AI-powered SaaS platform empowers businesses to streamline operations, automate repetitive tasks, and
+						make smarter,
+						data-driven decisions—all from one intuitive dashboard.
+									</p>
+									<div class="hero__actions">
+										<a href="#" class="hero__button hero__button--primary">Get Started</a>
+										<a href="#" class="hero__button hero__button--secondary">See Details</a>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="stats">
+							<div class="stats__container">
+								<div class="stats__items">
+									<div class="stats__item stats__item--left">
+										<span class="stats__caption">Clients</span>
+										<h2 class="stats__value">120K+</h2>
+									</div>
+									<div class="stats__item stats__item--center">
+										<span class="stats__caption">Projects</span>
+										<h2 class="stats__value">150+</h2>
+									</div>
+									<div class="stats__item stats__item--right">
+										<span class="stats__caption">5-Star Reviews</span>
+										<h2 class="stats__value">32K+</h2>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="index__features-mirror">
+						<section class="features">
+							<div class="features__container">
+								<div class="features__head">
+									<div class="features__content">
+										<h2 class="features__title">
+											Designed for Designers.
+											<br>
+											Powered by
+											<span>AI</span>
+											.
+										</h2>
+										<p class="features__text">
+											Unlock the full potential of your creativity with our AI-powered design assistant. Explore new dimensions
+							of desig
+										</p>
+									</div>
+									<div class="features__icon-main">
+										<img src="./assets/img/romb.svg" alt="AI Geometry">
+									</div>
+								</div>
+								<div class="features__grid">
+									<div class="features__card card-feature card-feature--small">
+										<div class="card-feature__head">
+											<p class="card-feature__desc">
+												Skip the blank canvas and spark creativity instantly. Our AI generates
+								high-quality, on-brand design concepts within
+								seconds
+											</p>
+											<a href="#" class="card-feature__arrow">
+												<span class="--icon-arrow-right"></span>
+											</a>
+										</div>
+										<h3 class="card-feature__title">Instant Ideation</h3>
+									</div>
+									<div class="features__card card-feature card-feature--big">
+										<div class="card-feature__head">
+											<p class="card-feature__desc">
+												No two creators are the same, and neither are their styles. Our AI learns
+								from your inputs, understands your aesthetic
+								preferences, and fine-tunes every design
+											</p>
+											<a href="#" class="card-feature__arrow">
+												<span class="--icon-arrow-right"></span>
+											</a>
+										</div>
+										<h3 class="card-feature__title">Smart Adaptability</h3>
+									</div>
+									<div class="features__card card-feature card-feature--big">
+										<div class="card-feature__head">
+											<p class="card-feature__desc">
+												Design once, export anywhere. Whether you need high-res graphics for print,
+								responsive visuals for the web,
+								mobile-optimized assets,
+											</p>
+											<a href="#" class="card-feature__arrow">
+												<span class="--icon-arrow-right"></span>
+											</a>
+										</div>
+										<h3 class="card-feature__title">Multi-Format Export</h3>
+									</div>
+									<div class="features__card card-feature card-feature--small">
+										<div class="card-feature__head">
+											<p class="card-feature__desc">
+												Say goodbye to repetitive tweaks and endless back-and-forths. With intuitive
+								prompt-based editing
+											</p>
+											<a href="#" class="card-feature__arrow">
+												<span class="--icon-arrow-right"></span>
+											</a>
+										</div>
+										<h3 class="card-feature__title">Seamless Revisions</h3>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="numbers">
+							<div class="numbers__container">
+								<div class="numbers__head">
+									<h2 class="numbers__date">2025</h2>
+									<p class="numbers__text">
+										Whether you're designing for personal projects, creative teams, or large-scale
+						campaigns, our AI-powered platform is built to bring your ideas to life—quickly, beautifully, and
+						intelligently.And the results? The numbers speak for themselves:
+									</p>
+								</div>
+								<div class="numbers__grid">
+									<div class="numbers__card card-number card-number--up">
+										<div class="card-number__body">
+											<span class="card-number__date">2014</span>
+											<h3 class="card-number__value">Year of establishment</h3>
+											<p class="card-number__desc">More than 10 years in the field</p>
+											<div class="card-number__images card-number__images--circle">
+												<div class="card-number__img">
+													<picture>
+														<img alt="Stats" src="./assets/img/numbers-stats/stats-1.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Stats" src="./assets/img/numbers-stats/stats-2.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Stats" src="./assets/img/numbers-stats/stats-3.webp">
+													</picture>
+												</div>
+												<div class="card-number__divider">
+													<span class="card-number__horiz-line"></span>
+													<span class="--icon-small-arrow card-number__arrow"></span>
+													<span class="card-number__vert-line"></span>
+													<span class="--icon-small-arrow card-number__arrow card-number__arrow--mirror"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="numbers__card card-number card-number--down">
+										<div class="card-number__body">
+											<span class="card-number__date">304</span>
+											<h3 class="card-number__value">Projects are launched</h3>
+											<p class="card-number__desc">A lot of projects are done</p>
+											<div class="card-number__images card-number__images--square">
+												<div class="card-number__img">
+													<picture>
+														<img alt="Project" src="./assets/img/numbers-stats/project-1.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Project" src="./assets/img/numbers-stats/project-2.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Project" src="./assets/img/numbers-stats/project-3.webp">
+													</picture>
+												</div>
+												<div class="card-number__divider">
+													<span class="card-number__horiz-line"></span>
+													<span class="--icon-small-arrow card-number__arrow"></span>
+													<span class="card-number__vert-line"></span>
+													<span class="--icon-small-arrow card-number__arrow card-number__arrow--mirror"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="numbers__card card-number card-number--up">
+										<div class="card-number__body">
+											<span class="card-number__date">189</span>
+											<h3 class="card-number__value">Clients are satisfied</h3>
+											<p class="card-number__desc">These people love us</p>
+											<div class="card-number__images card-number__images--circle">
+												<div class="card-number__img">
+													<picture>
+														<img alt="User" src="./assets/img/numbers-stats/clients-1.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="User" src="./assets/img/numbers-stats/clients-2.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="User" src="./assets/img/numbers-stats/clients-3.webp">
+													</picture>
+												</div>
+												<div class="card-number__divider">
+													<span class="card-number__horiz-line"></span>
+													<span class="--icon-small-arrow card-number__arrow"></span>
+													<span class="card-number__vert-line"></span>
+													<span class="--icon-small-arrow card-number__arrow card-number__arrow--mirror"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="numbers__card card-number card-number--down">
+										<div class="card-number__body">
+											<span class="card-number__date">12</span>
+											<h3 class="card-number__value">Projects in work</h3>
+											<p class="card-number__desc">What we do right now</p>
+											<div class="card-number__images card-number__images--square">
+												<div class="card-number__img">
+													<picture>
+														<img alt="Asset" src="./assets/img/numbers-stats/project-4.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Asset" src="./assets/img/numbers-stats/project-5.webp">
+													</picture>
+												</div>
+												<div class="card-number__img">
+													<picture>
+														<img alt="Asset" src="./assets/img/numbers-stats/project-6.webp">
+													</picture>
+												</div>
+												<div class="card-number__divider">
+													<span class="card-number__horiz-line"></span>
+													<span class="--icon-small-arrow card-number__arrow"></span>
+													<span class="card-number__vert-line"></span>
+													<span class="--icon-small-arrow card-number__arrow card-number__arrow--mirror"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="numbers__actions">
+									<a href="#" class="numbers__btn">
+										Get Started
+										<span class="--icon-arrow-right numbers__arrow"></span>
+									</a>
+									<div class="numbers__status numbers__status--available">Slots are available</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<section class="pricing">
+						<div class="pricing__container">
+							<div class="pricing__header">
+								<h2 class="pricing__title">Choose the Plan That’s Right for You</h2>
+								<p class="pricing__text">
+									Giving you access to essential features and over 1,000 creative tools. Upgrade to the Pro Plan to unlock
+					powerful AI
+					capabilities, cloud syncing, and a whole new level of creative freedom.
+								</p>
+							</div>
+							<div class="pricing__tabs tabs-pricing">
+								<button type="button" class="tabs-pricing__button tabs-pricing__button--active" data-tab="monthly">Monthly</button>
+								<button type="button" class="tabs-pricing__button" data-tab="yearly">Yearly</button>
+								<span class="tabs-pricing__slider"></span>
+							</div>
+							<div class="pricing__panes-container">
+								<div class="pricing__panes">
+									<div id="monthly" class="pricing__pane _pane-active">
+										<div class="pricing__grid">
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan">Free</h3>
+														<p class="card-pricing__descr">Everything you need to supercharge your productivity.</p>
+														<div class="card-pricing__price">
+															$0
+															<span class="card-pricing__period">/ month</span>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																20 design
+												generations/month
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Low-res
+												downloads
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Basic style
+												presets
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Limited
+												customization options
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn">
+														Subscribe
+														<span class="--icon-select-arrow
+											card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing card-pricing--featured">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan card-pricing__plan--pro">Pro</h3>
+														<p class="card-pricing__descr">Unlock a new level of your personal productivity.</p>
+														<div class="card-pricing__price">
+															$17
+															<span class="card-pricing__period">/ month</span>
+															<mark class="card-pricing__mark">-20%</mark>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list card-pricing__list--pro">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Everything in Free
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Enigma AI
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Unlimited design
+												generations
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Custom Themes
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																High-resolution exports
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Custom Extensions
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Developer Tools
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn card-pricing__btn--orange">
+														Subscribe
+														<span class="--icon-select-arrow
+																				card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan">Team</h3>
+														<p class="card-pricing__descr">Everything you need to supercharge your productivity.</p>
+														<div class="card-pricing__price">
+															$37
+															<span class="card-pricing__period">/ month</span>
+															<mark class="card-pricing__mark">-20%</mark>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Everything in
+												Free
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Unlimited
+												Shared Commands
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Unlimited
+												Shared Quicklinks
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Priority
+												support
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn">
+														Subscribe
+														<span class="--icon-select-arrow
+																				card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+										</div>
+									</div>
+									<div id="yearly" class="pricing__pane">
+										<div class="pricing__grid">
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan">Free</h3>
+														<p class="card-pricing__descr">Everything you need to supercharge your productivity.</p>
+														<div class="card-pricing__price">
+															$0
+															<span class="card-pricing__period">/ year</span>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																20 design
+												generations/month
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Low-res
+												downloads
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Basic style
+												presets
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Limited
+												customization options
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn">
+														Subscribe
+														<span class="--icon-select-arrow
+																				card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing card-pricing--featured">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan card-pricing__plan--pro">Pro</h3>
+														<p class="card-pricing__descr">Unlock a new level of your personal productivity.</p>
+														<div class="card-pricing__price">
+															$144
+															<span class="card-pricing__period">/ year</span>
+															<mark class="card-pricing__mark">Save 30%</mark>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list card-pricing__list--pro">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Everything in Free
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Enigma AI
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Unlimited design
+												generations
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Custom Themes
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																High-resolution exports
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Custom Extensions
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick card-pricing__tick--pro"></span>
+																Developer Tools
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn card-pricing__btn--orange">
+														Subscribe
+														<span class="--icon-select-arrow
+																				card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+											<div class="pricing__card-wrapper">
+												<article class="pricing__card card-pricing">
+													<div class="card-pricing__header">
+														<h3 class="card-pricing__plan">Team</h3>
+														<p class="card-pricing__descr">Everything you need to supercharge your productivity.</p>
+														<div class="card-pricing__price">
+															$324
+															<span class="card-pricing__period">/ year</span>
+															<mark class="card-pricing__mark">Save 25%</mark>
+														</div>
+													</div>
+													<div class="card-pricing__body">
+														<h4 class="card-pricing__subtitle">What's included</h4>
+														<ul class="card-pricing__list">
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Everything in
+												Free
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Unlimited
+												Shared Commands
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Unlimited
+												Shared Quicklinks
+															</li>
+															<li class="card-pricing__item">
+																<span class="--icon-tick card-pricing__tick"></span>
+																Priority
+												support
+															</li>
+														</ul>
+													</div>
+													<button type="button" class="card-pricing__btn">
+														Subscribe
+														<span class="--icon-select-arrow
+																				card-pricing__arrow"></span>
+													</button>
+												</article>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="index__faq-wrapper faq-wrapper">
+						<div class="faq-wrapper__line"></div>
+						<section class="faq">
+							<div class="faq__container">
+								<div class="faq__decor faq__decor--1"></div>
+								<div class="faq__decor faq__decor--2"></div>
+								<div class="faq__decor faq__decor--3"></div>
+								<div class="faq__body">
+									<div class="faq__header">
+										<h2 class="faq__title">Frequently Asked Questions</h2>
+										<p class="faq__text">
+											Got questions? We've got answers. Find everything you need to know about using our platform, plans, and
+							features.
+										</p>
+									</div>
+									<div data-fls-spollers="" data-fls-spollers-one="" class="spollers">
+										<details class="spollers__item">
+											<summary class="spollers__title">What is this platform used for?</summary>
+											<div class="spollers__body">
+												It's an AI-powered design assistant that helps you generate, customize, and export creative assets in
+			seconds—whether for personal projects, brand work, or commercial use.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">What happens if I hit my free generation limit?</summary>
+											<div class="spollers__body">
+												You can easily upgrade to our Pro or Team plans at any time to unlock unlimited generations, high-resolution
+			exports, and exclusive AI tools.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">Do I need design experience to use it?</summary>
+											<div class="spollers__body">
+												Not at all! Our interface is built for both beginners and professionals. The AI handles the complex rendering,
+			while you retain full creative control.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">Can I collaborate with my team?</summary>
+											<div class="spollers__body">
+												Yes, with our Team plan you can share commands, sync themes, and collaborate on design systems in a single shared
+			workspace.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">Is it really free to use?</summary>
+											<div class="spollers__body">
+												Yes, our Free plan includes 20 generations per month with access to basic style presets, completely free of charge
+			forever.
+											</div>
+										</details>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="cta">
+							<div class="cta__container">
+								<div class="cta__body">
+									<div class="cta__grid-bg"></div>
+									<h2 class="cta__title">Ready to Design Smarter?</h2>
+									<p class="cta__text">
+										Whether you're a freelancer, a team, or a growing agency—our tools adapt to your workflow. Design faster.
+						Deliver better.
+									</p>
+									<a href="#" class="cta__button button">
+										<span>Get Started</span>
+										<span class="--icon-arrow cta__arrow"></span>
+									</a>
+								</div>
+							</div>
+						</section>
+						<footer class="footer">
+							<div class="footer__container">
+								<div class="footer__main">
+									<div class="footer__col footer__col--about">
+										<h3 class="footer__title">About Us</h3>
+										<p class="footer__text">
+											We're a team of designers, engineers, and innovators building AI tools that empower anyone to turn
+							imagination
+							into stunning visuals—faster, smarter, and effortlessly.
+										</p>
+									</div>
+									<div class="footer__col footer__col--links">
+										<h3 class="footer__title-list">Useful Links</h3>
+										<ul class="footer__list">
+											<li>
+												<a href="#" class="footer__link">About</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Services</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Team</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Prices</a>
+											</li>
+										</ul>
+									</div>
+									<div class="footer__col footer__col--help">
+										<h3 class="footer__title-list">Help</h3>
+										<ul class="footer__list">
+											<li>
+												<a href="#" class="footer__link">Customer Support</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Terms & Conditions</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Privacy Policy</a>
+											</li>
+											<li>
+												<a href="#" class="footer__link">Contact Us</a>
+											</li>
+										</ul>
+									</div>
+									<div class="footer__col footer__col--connect">
+										<h3 class="footer__title-list">Connect With Us</h3>
+										<ul class="footer__list footer__list--contacts">
+											<li>
+												<span class="footer__contact">27 Division St, New York, NY 10002, USA</span>
+											</li>
+											<li>
+												<a href="tel:+1233242653" class="footer__link">+123 324 2653</a>
+											</li>
+											<li>
+												<a href="mailto:username@mail.com" class="footer__link">username@mail.com</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="footer__bottom">
+									<div class="footer__copy">© 2024 All Right Reserved.</div>
+									<div class="footer__socials">
+										<a href="#" class="footer__social-item --icon-facebook"></a>
+										<a href="#" class="footer__social-item --icon-github"></a>
+										<a href="#" class="footer__social-item --icon-twitter"></a>
+										<a href="#" class="footer__social-item --icon-google"></a>
+									</div>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
