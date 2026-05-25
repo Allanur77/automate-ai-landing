@@ -873,10 +873,9 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: toRem(24);
 		align-items: center;
 		width: 100%;
-
+		@include adaptiveValue("gap", 24, 15, 0, 1200, 768.98);
 		@media (max-width: 768.98px) {
 			display: flex;
 			overflow-x: auto;
@@ -884,7 +883,7 @@
 			scroll-behavior: smooth;
 			padding: toRem(20) toRem(15);
 			margin: 0 toRem(-15);
-			gap: toRem(16);
+			gap: toRem(24);
 			align-items: stretch;
 
 			scrollbar-width: none;
@@ -1189,7 +1188,7 @@
 		content: "";
 		position: absolute;
 		z-index: 1;
-		top: 35%;
+		top: 28%;
 		right: -200px;
 		@include adaptiveValue("width", 940, 470, 0, 1200, 768);
 		@include adaptiveValue("height", 983, 491.5, 0, 1200, 768);
@@ -1334,9 +1333,8 @@
 
 .cta {
 	position: relative;
-	// Нам не нужны фоны, так как общая обёртка .faq-wrapper всё сделает за нас
 	background: transparent;
-	@include adaptiveValue("padding-bottom", 60, 30); // Отступ снизу секции
+	@include adaptiveValue("padding-bottom", 60, 30);
 
 	&__container {
 		margin-top: toRem(46);
@@ -1344,17 +1342,14 @@
 
 	&__body {
 		position: relative;
-		overflow: hidden; // Чтобы фоновая сетка не вылетала за скругления карточки
-		max-width: toRem(1120); // Ширина самой большой плашки по макету
+		overflow: hidden;
+		max-width: toRem(1120);
 		margin: 0 auto;
-
-		// Эффект матового стекла (Glassmorphism)
 		background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		@include adaptiveValue("border-radius", 32, 16);
 		backdrop-filter: blur(toRem(20));
 
-		// Паддинги внутри карточки
 		@include adaptiveValue("padding-top", 70, 40);
 		@include adaptiveValue("padding-bottom", 70, 40);
 		padding-left: toRem(24);
@@ -1371,12 +1366,9 @@
 			width: 100%;
 			height: 150%;
 			top: -50%;
-			left: 0; // Добавь для жесткой фиксации по левому краю
-
-			// КРИТИЧЕСКИ ВАЖНО: уводим под текст и отключаем клики
+			left: 0;
 			z-index: -1;
 			pointer-events: none;
-
 			background: radial-gradient(
 				ellipse 50% 60% at 50% 32.8%,
 				rgba(255, 255, 255, 0.4) 7%,
@@ -1391,13 +1383,12 @@
 		@media (any-hover: hover) {
 			&:hover {
 				&::before {
-					opacity: 1; // Градиент становится чуть ярче, когда пользователь наводит мышку на карточку
+					opacity: 1;
 				}
 			}
 		}
 	}
 
-	// Полупрозрачная сетка на фоне внутри карточки
 	&__grid-bg {
 		position: absolute;
 		top: 0;
@@ -1406,12 +1397,11 @@
 		height: 100%;
 		z-index: -1;
 		pointer-events: none;
-		opacity: 0.05; // Делаем её едва заметной
-		// Сюда можно бахнуть мелкую SVG-сетку фоном, если она не экспортирована вместе с макетом
+		opacity: 0.05;
 		background-image:
 			linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
 			linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-		background-size: 40px 40px; // Размер ячейки сетки
+		background-size: 40px 40px;
 	}
 
 	&__title {
@@ -1471,6 +1461,154 @@
 
 		&:active {
 			transform: scale(0.98);
+		}
+	}
+}
+
+.footer {
+	background: rgba(255, 255, 255, 0.06);
+	@include adaptiveValue("padding-top", 66, 35);
+	@include adaptiveValue("padding-bottom", 40, 20);
+	color: #ffffff;
+
+	&__container {
+	}
+
+	&__main {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(30);
+		@include adaptiveValue("gap", 30, 20, 0, 1200, 768.98);
+		justify-content: space-between;
+		@include adaptiveValue("margin-bottom", 60, 30);
+
+		@media (max-width: 768.98px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			@include adaptiveValue("gap", 40, 24, 0, 768, 320);
+		}
+
+		@media (max-width: 479.98px) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			text-align: center;
+
+			.footer__list {
+				align-items: center;
+			}
+		}
+	}
+
+	&__col {
+		flex: 0 1 toRem(200);
+		@include adaptiveValue("flex-basis", 200, 180, 0, 1200, 810.98);
+
+		&--links {
+			@include adaptiveValue("flex-basis", 200, 140, 0, 1200, 810.98);
+		}
+
+		&--help {
+			@include adaptiveValue("flex-basis", 200, 140, 0, 1200, 810.98);
+		}
+
+		&--about {
+			flex: 0 1 toRem(310);
+			@include adaptiveValue("flex-basis", 310, 200, 0, 1200, 840.98);
+
+			@media (max-width: 768.98px) {
+				flex: 0 1 100%;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: toRem(32);
+		line-height: 1.3;
+		margin-bottom: toRem(21);
+	}
+
+	&__title-list {
+		font-weight: 700;
+		font-size: toRem(24);
+		line-height: 1.4;
+		color: #ff541f;
+		margin-bottom: toRem(23);
+	}
+
+	&__text {
+		font-size: toRem(18);
+		line-height: 1.5;
+		color: #bcbcbc;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+	}
+
+	&__link,
+	&__contact {
+		font-size: toRem(18);
+		line-height: 1.5;
+		color: #bcbcbc;
+		transition: color 0.3s ease;
+	}
+
+	&__link {
+		@media (any-hover: hover) {
+			&:hover {
+				color: #ff541f;
+			}
+		}
+	}
+
+	&__bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		padding-top: toRem(30);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(20);
+
+		@media (max-width: 768.98px) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	&__copy {
+		font-size: toRem(18);
+		color: #ffffff;
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: toRem(8);
+	}
+
+	&__social-item {
+		width: toRem(36);
+		height: toRem(36);
+		border: 1px solid #ff541f;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ff541f;
+		font-size: toRem(14);
+		transition:
+			background-color 0.3s ease,
+			border-color 0.3s ease,
+			color 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #ff541f;
+				color: #ffffff;
+			}
 		}
 	}
 }
